@@ -34,8 +34,10 @@ const main = async (): Promise<any> => {
         ID: dataMerchant?.id,
         Name: dataMerchant?.address?.name,
         Cuisine: dataMerchant?.merchantData?.cuisine,
-        Rating: dataMerchant?.rating ? dataMerchant?.rating : 'Dont have any rating',
-        Promo: dataMerchant?.promo?.description ? dataMerchant?.promo?.description : 'Dont have any description',
+        Rating: dataMerchant?.merchantData?.rating ? dataMerchant.merchantData.rating : 'Dont have any rating',
+        Promo: dataMerchant?.merchantData?.promo?.description
+          ? dataMerchant.merchantData.promo.description
+          : 'Dont have any description',
       };
 
       console.log(`Adding merchant ${dataMerchant.address.name} to Google SpreadSheet!`);
