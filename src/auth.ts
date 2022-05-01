@@ -1,8 +1,9 @@
 import * as fs from 'fs';
+import { ICredentials } from '../interfaces/creds.interface';
 
 require('dotenv').config();
 
-const getCredentials = (): { client_email: string; private_key: string } => {
+const getCredentials = (): ICredentials => {
     const credsFileName = process.env.CREDS_FILE_NAME;
     const credsPath = process.env.CREDS_PATH;
     const creds = `${credsPath}/${credsFileName}`;
